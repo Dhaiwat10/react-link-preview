@@ -1,5 +1,5 @@
 {
-  "name": "@dhaiwat10/react-link-preview",
+  "name": "react-link-preview",
   "license": "MIT",
   "version": "0.0.0",
   "private": false,
@@ -150,5 +150,8 @@
         }
       ]
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
