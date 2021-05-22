@@ -1,0 +1,17 @@
+.Container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(247, 247, 247);
+    cursor: pointer;
+  }
+}
+
+.Image {
+  width: 100%;
+}

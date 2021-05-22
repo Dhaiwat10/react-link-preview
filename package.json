@@ -1,20 +1,20 @@
 {
-  "name": "sixfootsixdesigns-react-library-boilerplate",
+  "name": "react-link-preview",
   "license": "MIT",
   "version": "0.0.0",
   "private": false,
-  "description": "React Typescript Library Boilerplate",
-  "author": "James Olson",
-  "homepage": "https://github.com/sixfootsixdesigns/React-Library-Boilerplate",
+  "description": "React library to preview links.",
+  "author": "Dhaiwat Pandya",
+  "homepage": "https://github.com/dhaiwat10/react-link-preview",
   "bugs": {
-    "url": "https://github.com/sixfootsixdesigns/React-Library-Boilerplate/issues"
+    "url": "https://github.com/dhaiwat10/react-link-preview/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sixfootsixdesigns/React-Library-Boilerplate.git"
+    "url": "git+https://github.com/dhaiwat10/react-link-preview.git"
   },
   "scripts": {
-    "build": "yarn clean; rollup -c",
+    "build": "yarn clean & rollup -c",
     "clean": "rimraf dist",
     "dev": "yarn storybook",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
@@ -34,7 +34,9 @@
   "module": "index.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "classnames": "^2.2.6"
+    "@types/storybook__react": "^5.2.1",
+    "classnames": "^2.2.6",
+    "html-metadata-parser": "^1.0.3"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -51,12 +53,12 @@
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/npm": "^7.0.8",
     "@semantic-release/release-notes-generator": "^9.0.1",
-    "@storybook/react": "^6.1.2",
+    "@storybook/react": "^6.2.9",
     "@testing-library/react": "^11.2.2",
     "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
     "@types/node": "^12",
-    "@types/react": "^16.9.10",
+    "@types/react": "^17.0.6",
     "@types/react-dom": "^16.9.10",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
