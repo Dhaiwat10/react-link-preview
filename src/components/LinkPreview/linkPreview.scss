@@ -3,6 +3,7 @@ $secondary: rgb(100, 100, 100);
 
 /* common */
 .Container {
+  text-align: left;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -10,6 +11,7 @@ $secondary: rgb(100, 100, 100);
   border: 1px solid #ccc;
   color: $primary;
   transition: 0.3s all ease;
+  height: fit-content;
 
   &:hover {
     background-color: rgb(247, 247, 247);
@@ -34,6 +36,9 @@ $secondary: rgb(100, 100, 100);
   width: 100%;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30vh;
 }
 
 .SiteDetails {
@@ -42,11 +47,6 @@ $secondary: rgb(100, 100, 100);
 
 /* sm */
 @media (max-width: 640px) {
-  .Container {
-    width: 80vw;
-    height: fit-content;
-  }
-
   .Description {
     display: none;
   }

@@ -9,6 +9,8 @@ export interface LinkPreviewProps {
   height?: string | number;
   descriptionLength?: number;
   borderRadius?: string | number;
+  imageHeight?: string | number;
+  textAlign?: 'left' | 'right' | 'center';
 }
 
 interface Image {
@@ -40,6 +42,8 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   height,
   descriptionLength,
   borderRadius,
+  imageHeight,
+  textAlign,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<MetaResult | null>();
@@ -80,14 +84,18 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
     <div
       onClick={onClick}
       className={`Container ${className}`}
-      style={{ width, height, borderRadius }}
+      style={{ width, height, borderRadius, textAlign }}
     >
       {images && (
-        <img
+        <div
+          style={{
+            borderTopLeftRadius: borderRadius,
+            borderTopRightRadius: borderRadius,
+            backgroundImage: `url(${og.image})`,
+            height: imageHeight,
+          }}
           className='Image'
-          src={og.image}
-          style={{ borderTopLeftRadius: borderRadius, borderTopRightRadius: borderRadius }}
-        />
+        ></div>
       )}
       <div className='LowerContainer'>
         <h3 className='Title'>{og.title ? og.title : meta.title}</h3>
