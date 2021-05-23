@@ -101,7 +101,11 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         <h3 className='Title'>{og.title ? og.title : meta.title}</h3>
         {description && (
           <span className='Description Secondary'>
-            {descriptionLength ? description.slice(0, descriptionLength) + '...' : description}
+            {descriptionLength
+              ? description.length > descriptionLength
+                ? description.slice(0, descriptionLength) + '...'
+                : description
+              : description}
           </span>
         )}
         <div className='Secondary SiteDetails'>

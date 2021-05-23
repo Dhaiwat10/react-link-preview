@@ -24,4 +24,11 @@ storiesOf('LinkPreview', module)
   ))
   .add('Twitter link', () => (
     <LinkPreview url='https://twitter.com/BarcaUniversal/status/1396232440314830856' width='20vw' />
+  ))
+  .add('Reddit link', () => (
+    <LinkPreview
+      url='https://www.reddit.com/r/LifeProTips/comments/nivqb3/lpt_if_your_your_largest_hex_key_is_to_small_you/'
+      width='20vw'
+      descriptionLength={100}
+    />
   ));
