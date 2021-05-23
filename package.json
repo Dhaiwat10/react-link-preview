@@ -34,7 +34,6 @@
   "module": "index.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@types/storybook__react": "^5.2.1",
     "classnames": "^2.2.6",
     "html-metadata-parser": "^1.0.3"
   },
@@ -60,6 +59,7 @@
     "@types/node": "^12",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^16.9.10",
+    "@types/storybook__react": "^5.2.1",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
     "babel-loader": "^8.2.1",

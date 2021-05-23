@@ -1,10 +1,15 @@
+$primary: black;
+$secondary: rgb(100, 100, 100);
+
+/* common */
 .Container {
   background-color: white;
   display: flex;
   flex-direction: column;
   border-radius: 7px;
   border: 1px solid #ccc;
-  padding: 10px;
+  color: $primary;
+  transition: 0.3s all ease;
 
   &:hover {
     background-color: rgb(247, 247, 247);
@@ -12,6 +17,44 @@
   }
 }
 
+.Secondary {
+  color: $secondary;
+}
+
+.LowerContainer {
+  padding: 10px;
+}
+
+.Title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .Image {
   width: 100%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.SiteDetails {
+  margin-top: 10px;
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .Container {
+    width: 80vw;
+    height: fit-content;
+  }
+
+  .Description {
+    display: none;
+  }
+}
+
+/* md */
+@media (min-width: 641px) and (max-width: 768px) {
+  .Description {
+    display: none;
+  }
 }

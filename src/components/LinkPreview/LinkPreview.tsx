@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Meta from 'html-metadata-parser';
 
 import './linkPreview.scss';
-import classNames from 'classnames';
-
 export interface LinkPreviewProps {
   url: string;
   className?: string;
+  width?: string | number;
+  height?: string | number;
+  descriptionLength?: number;
+  borderRadius?: string | number;
 }
 
 interface Image {
@@ -31,34 +33,74 @@ export interface MetaResult {
   };
 }
 
-export const LinkPreview: React.FC<LinkPreviewProps> = ({ url, className = '' }) => {
-  const classes = classNames('Container', className);
-
-  const [metadata, setMetadata] = useState<MetaResult>();
+export const LinkPreview: React.FC<LinkPreviewProps> = ({
+  url,
+  className = '',
+  width,
+  height,
+  descriptionLength,
+  borderRadius,
+}) => {
+  const _isMounted = useRef(true);
+  const [metadata, setMetadata] = useState<MetaResult | null>();
 
   useEffect(() => {
-    Meta.parser(`https://thingproxy.freeboard.io/fetch/${url}`, function (err, result) {
-      console.log(result);
-      setMetadata(result as MetaResult);
-    });
-  }, []);
+    Meta.parser(`https://thingproxy.freeboard.io/fetch/${url}`)
+      .then((res: MetaResult) => {
+        console.log(res);
+        if (_isMounted.current) {
+          setMetadata(res as MetaResult);
+        }
+      })
+      .catch((err: any) => {
+        console.log(err);
+        if (_isMounted.current) {
+          setMetadata(null);
+        }
+      });
+    return () => {
+      _isMounted.current = false;
+    };
+  }, [url]);
 
   if (!metadata) {
     return null;
   }
 
-  const { images, og } = metadata;
+  const { images, og, meta } = metadata;
+
+  const description = og.description ? og.description : meta.description ? meta.description : null;
+  const { hostname } = new URL(url);
 
   const onClick = () => {
     window.open(url, '_blank');
   };
 
   return (
-    <div onClick={onClick} className={classes}>
-      <p>Site name - {og.site_name}</p>
-      {images && <img className='Image' src={og.image} />}
-      <h3>Title - {og.title}</h3>
-      <p>Description - {og.description}</p>
+    <div
+      onClick={onClick}
+      className={`Container ${className}`}
+      style={{ width, height, borderRadius }}
+    >
+      {images && (
+        <img
+          className='Image'
+          src={og.image}
+          style={{ borderTopLeftRadius: borderRadius, borderTopRightRadius: borderRadius }}
+        />
+      )}
+      <div className='LowerContainer'>
+        <h3 className='Title'>{og.title ? og.title : meta.title}</h3>
+        {description && (
+          <span className='Description Secondary'>
+            {descriptionLength ? description.slice(0, descriptionLength) + '...' : description}
+          </span>
+        )}
+        <div className='Secondary SiteDetails'>
+          {og.site_name && <span>{og.site_name} • </span>}
+          <span>{hostname}</span>
+        </div>
+      </div>
     </div>
   );
 };
