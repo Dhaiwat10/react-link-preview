@@ -77,7 +77,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
 
   const { images, og, meta } = metadata;
 
-  let image = og.image ? og.image : images.length > 0 ? images[0].url : null;
+  const image = og.image ? og.image : images.length > 0 ? images[0].url : null;
 
   const description = og.description ? og.description : meta.description ? meta.description : null;
   const { hostname } = new URL(url);
