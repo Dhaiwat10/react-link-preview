@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.1...v1.1.2) (2021-05-23)
+
+
+### Bug Fixes
+
+* fix lint error ([ecbc2c5](https://github.com/dhaiwat10/react-link-preview/commit/ecbc2c5eb154cc2ed2266027ac4052ff7d0d7161))
+* some refactoring and improve support for images ([3791fa5](https://github.com/dhaiwat10/react-link-preview/commit/3791fa5f4fe09617b30bf533cd90851e2ca9bde8))
+
 ### [1.1.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.0...v1.1.1) (2021-05-23)
 
 
