@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Meta from 'html-metadata-parser';
 
 import './linkPreview.scss';
+
+const proxyLink = 'https://thingproxy.freeboard.io/fetch/';
+
 export interface LinkPreviewProps {
   url: string;
   className?: string;
@@ -49,19 +52,20 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   const [metadata, setMetadata] = useState<MetaResult | null>();
 
   useEffect(() => {
-    Meta.parser(`https://thingproxy.freeboard.io/fetch/${url}`)
+    Meta.parser(proxyLink + url)
       .then((res: MetaResult) => {
         console.log(res);
         if (_isMounted.current) {
           setMetadata(res as MetaResult);
         }
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         console.log(err);
         if (_isMounted.current) {
           setMetadata(null);
         }
       });
+
     return () => {
       _isMounted.current = false;
     };
@@ -72,6 +76,8 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   }
 
   const { images, og, meta } = metadata;
+
+  let image = og.image ? og.image : images.length > 0 ? images[0].url : null;
 
   const description = og.description ? og.description : meta.description ? meta.description : null;
   const { hostname } = new URL(url);
@@ -86,12 +92,12 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       className={`Container ${className}`}
       style={{ width, height, borderRadius, textAlign }}
     >
-      {images && (
+      {image && (
         <div
           style={{
             borderTopLeftRadius: borderRadius,
             borderTopRightRadius: borderRadius,
-            backgroundImage: `url(${og.image})`,
+            backgroundImage: `url(${image})`,
             height: imageHeight,
           }}
           className='Image'
