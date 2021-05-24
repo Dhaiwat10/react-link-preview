@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.2...v1.1.3) (2021-05-24)
+
+
+### Bug Fixes
+
+* fix critical docs and add keywords ([85cb078](https://github.com/dhaiwat10/react-link-preview/commit/85cb078c5c8e1371baab82ba1e3e3c5b42ff0e49))
+
 ### [1.1.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.1...v1.1.2) (2021-05-23)
 
 
