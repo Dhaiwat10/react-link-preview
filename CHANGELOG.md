@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.4](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.3...v1.1.4) (2021-05-25)
+
+
+### Performance Improvements
+
+* switch to heroku proxy for metadata fetching ([6b79f40](https://github.com/dhaiwat10/react-link-preview/commit/6b79f40d322411a77fd72e5dcf70da794654450e))
+
 ### [1.1.3](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.2...v1.1.3) (2021-05-24)
 
 
