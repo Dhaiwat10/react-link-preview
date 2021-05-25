@@ -6,6 +6,7 @@ import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
 import ts from 'typescript';
+import image from '@rollup/plugin-image';
 
 export default {
   input: './src/index.ts',
@@ -23,6 +24,7 @@ export default {
     },
   ],
   plugins: [
+    image(),
     resolve(),
     commonjs(),
     postcss(),
