@@ -1,9 +1,10 @@
+import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
-import Meta from 'html-metadata-parser';
 
 import './linkPreview.scss';
 
-const proxyLink = 'https://thingproxy.freeboard.io/fetch/';
+// const proxyLink = 'https://thingproxy.freeboard.io/fetch/';
+const proxyLink = 'https://rlp-proxy.herokuapp.com/?url=';
 
 export interface LinkPreviewProps {
   url: string;
@@ -52,11 +53,12 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   const [metadata, setMetadata] = useState<MetaResult | null>();
 
   useEffect(() => {
-    Meta.parser(proxyLink + url)
-      .then((res: MetaResult) => {
+    axios
+      .get(proxyLink + url)
+      .then((res) => {
         console.log(res);
         if (_isMounted.current) {
-          setMetadata(res as MetaResult);
+          setMetadata((res.data.metadata as unknown) as MetaResult);
         }
       })
       .catch((err: Error) => {

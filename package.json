@@ -41,8 +41,8 @@
   "module": "index.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "classnames": "^2.2.6",
-    "html-metadata-parser": "^1.0.3"
+    "axios": "^0.21.1",
+    "classnames": "^2.2.6"
   },
   "peerDependencies": {
     "react": "^16.8.0",

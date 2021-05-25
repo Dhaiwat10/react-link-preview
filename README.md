@@ -2,6 +2,8 @@
 
 A React component that renders beautiful link previews.
 
+<img src='https://img.shields.io/npm/dt/@dhaiwat10/react-link-preview' />
+
 **Note**: This package is stil in its early days. Functionality might not be as expected.
 
 ## How to use
