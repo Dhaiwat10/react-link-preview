@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.5...v1.2.0) (2021-05-25)
+
+
+### Features
+
+* add margin prop and upgrade to v2 api ([8de6bcc](https://github.com/dhaiwat10/react-link-preview/commit/8de6bcc051b1d1325b1d90e7e57ebfe7020a05d9))
+
 ### [1.1.5](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.4...v1.1.5) (2021-05-25)
 
 
