@@ -23,6 +23,8 @@ const Home = () => {
 };
 ```
 
+If the component renders nothing, it means that no metadata could be scraped for the URL.
+
 ## API (Available props)
 
 You can pass the following props to the `LinkPreview` component.

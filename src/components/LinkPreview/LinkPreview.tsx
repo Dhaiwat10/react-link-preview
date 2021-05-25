@@ -2,6 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 
 import './linkPreview.scss';
+// @ts-ignore
+import twThumb from '../../assets/tw-thumb.png';
+// @ts-ignore
+import redditThumb from '../../assets/reddit-thumb.png';
 
 // const proxyLink = 'https://thingproxy.freeboard.io/fetch/';
 const proxyLink = 'https://rlp-proxy.herokuapp.com/?url=';
@@ -79,10 +83,18 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
 
   const { images, og, meta } = metadata;
 
-  const image = og.image ? og.image : images.length > 0 ? images[0].url : null;
+  let image = og.image ? og.image : images.length > 0 ? images[0].url : null;
 
   const description = og.description ? og.description : meta.description ? meta.description : null;
   const { hostname } = new URL(url);
+
+  if (hostname.includes('twitter.com')) {
+    image = twThumb;
+  }
+
+  if (hostname.includes('reddit.com')) {
+    image = redditThumb;
+  }
 
   const onClick = () => {
     window.open(url, '_blank');
