@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.5](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.4...v1.1.5) (2021-05-25)
+
+
+### Bug Fixes
+
+* add image import rollup plugin ([d66c021](https://github.com/dhaiwat10/react-link-preview/commit/d66c0218c214be810f2806cba4fc28e1f52f4fb5))
+* add placeholder thumbs for reddit and twitter ([a9ba0eb](https://github.com/dhaiwat10/react-link-preview/commit/a9ba0eb6858e864c0ef8c13ffb965caeca6e838c))
+
 ### [1.1.4](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.3...v1.1.4) (2021-05-25)
 
 
