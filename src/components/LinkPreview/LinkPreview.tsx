@@ -7,8 +7,7 @@ import twThumb from '../../assets/tw-thumb.png';
 // @ts-ignore
 import redditThumb from '../../assets/reddit-thumb.png';
 
-// const proxyLink = 'https://thingproxy.freeboard.io/fetch/';
-const proxyLink = 'https://rlp-proxy.herokuapp.com/?url=';
+const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
 
 export interface LinkPreviewProps {
   url: string;
@@ -19,28 +18,15 @@ export interface LinkPreviewProps {
   borderRadius?: string | number;
   imageHeight?: string | number;
   textAlign?: 'left' | 'right' | 'center';
+  margin?: string | number;
 }
 
-interface Image {
-  url: string;
-}
-
-export interface MetaResult {
-  images: Array<Image>;
-  meta: {
-    description?: string;
-    title?: string;
-  };
-  og: {
-    image?: string;
-    description?: string;
-    title?: string;
-    images?: Array<Image>;
-    site_name?: string;
-    type?: string;
-    url?: string;
-    videos?: Array<Image>;
-  };
+export interface APIResponse {
+  title: string | null;
+  description: string | null;
+  image: string | null;
+  siteName: string | null;
+  hostname: string | null;
 }
 
 export const LinkPreview: React.FC<LinkPreviewProps> = ({
@@ -52,9 +38,10 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   borderRadius,
   imageHeight,
   textAlign,
+  margin,
 }) => {
   const _isMounted = useRef(true);
-  const [metadata, setMetadata] = useState<MetaResult | null>();
+  const [metadata, setMetadata] = useState<APIResponse | null>();
 
   useEffect(() => {
     axios
@@ -62,11 +49,12 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       .then((res) => {
         console.log(res);
         if (_isMounted.current) {
-          setMetadata((res.data.metadata as unknown) as MetaResult);
+          setMetadata((res.data.metadata as unknown) as APIResponse);
         }
       })
       .catch((err: Error) => {
-        console.log(err);
+        console.error(err);
+        console.error('No metadata could be found for the given URL.');
         if (_isMounted.current) {
           setMetadata(null);
         }
@@ -81,20 +69,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
     return null;
   }
 
-  const { images, og, meta } = metadata;
-
-  let image = og.image ? og.image : images.length > 0 ? images[0].url : null;
-
-  const description = og.description ? og.description : meta.description ? meta.description : null;
-  const { hostname } = new URL(url);
-
-  if (hostname.includes('twitter.com')) {
-    image = twThumb;
-  }
-
-  if (hostname.includes('reddit.com')) {
-    image = redditThumb;
-  }
+  const { image, description, title, siteName, hostname } = metadata;
 
   const onClick = () => {
     window.open(url, '_blank');
@@ -104,7 +79,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
     <div
       onClick={onClick}
       className={`Container ${className}`}
-      style={{ width, height, borderRadius, textAlign }}
+      style={{ width, height, borderRadius, textAlign, margin }}
     >
       {image && (
         <div
@@ -118,7 +93,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         ></div>
       )}
       <div className='LowerContainer'>
-        <h3 className='Title'>{og.title ? og.title : meta.title}</h3>
+        <h3 className='Title'>{title}</h3>
         {description && (
           <span className='Description Secondary'>
             {descriptionLength
@@ -129,7 +104,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
           </span>
         )}
         <div className='Secondary SiteDetails'>
-          {og.site_name && <span>{og.site_name} • </span>}
+          {siteName && <span>{siteName} • </span>}
           <span>{hostname}</span>
         </div>
       </div>
