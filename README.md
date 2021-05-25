@@ -37,6 +37,8 @@ You can pass the following props to the `LinkPreview` component.
 
 `height?`: string or number
 
+`margin?`: string or number
+
 `descriptionLength?`: number
 
 `borderRadius?`: string or number
