@@ -21,7 +21,7 @@ Import and render the preview:
 import { LinkPreview } from '@dhaiwat10/react-link-preview';
 
 const Home = () => {
-  return <LinkPreview url='https://www.youtube.com/watch?v=4pNryX84oWs' />;
+  return <LinkPreview url='https://www.youtube.com/watch?v=dQw4w9WgXcQ' />;
 };
 ```
 
@@ -34,6 +34,14 @@ You can pass the following props to the `LinkPreview` component.
 `url`: string
 
 `fallback?`: JSX.Element (Any valid JSX)
+
+`backgroundColor`: string
+
+`primaryTextColor`: string
+
+`secondaryTextColor`: string
+
+`borderColor`: string
 
 `className?`: string
 

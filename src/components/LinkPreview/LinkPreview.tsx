@@ -20,6 +20,10 @@ export interface LinkPreviewProps {
   textAlign?: 'left' | 'right' | 'center';
   margin?: string | number;
   fallback?: JSX.Element[] | JSX.Element | null;
+  backgroundColor?: string;
+  primaryTextColor?: string;
+  secondaryTextColor?: string;
+  borderColor?: string;
 }
 
 export interface APIResponse {
@@ -41,6 +45,10 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   textAlign,
   margin,
   fallback = null,
+  backgroundColor = 'white',
+  primaryTextColor = 'black',
+  secondaryTextColor = 'rgb(100, 100, 100)',
+  borderColor = '#ccc',
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -81,7 +89,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
     <div
       onClick={onClick}
       className={`Container ${className}`}
-      style={{ width, height, borderRadius, textAlign, margin }}
+      style={{ width, height, borderRadius, textAlign, margin, backgroundColor, borderColor }}
     >
       {image && (
         <div
@@ -95,9 +103,11 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         ></div>
       )}
       <div className='LowerContainer'>
-        <h3 className='Title'>{title}</h3>
+        <h3 className='Title' style={{ color: primaryTextColor }}>
+          {title}
+        </h3>
         {description && (
-          <span className='Description Secondary'>
+          <span className='Description Secondary' style={{ color: secondaryTextColor }}>
             {descriptionLength
               ? description.length > descriptionLength
                 ? description.slice(0, descriptionLength) + '...'
@@ -105,7 +115,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
               : description}
           </span>
         )}
-        <div className='Secondary SiteDetails'>
+        <div className='Secondary SiteDetails' style={{ color: secondaryTextColor }}>
           {siteName && <span>{siteName} • </span>}
           <span>{hostname}</span>
         </div>

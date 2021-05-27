@@ -32,4 +32,14 @@ storiesOf('LinkPreview', module)
       descriptionLength={100}
     />
   ))
-  .add('Fallback', () => <LinkPreview url='https://webzy.dev' fallback={<div>Fallback</div>} />);
+  .add('Fallback', () => <LinkPreview url='https://webzy.dev' fallback={<div>Fallback</div>} />)
+  .add('Colors', () => (
+    <LinkPreview
+      url='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+      backgroundColor='black'
+      primaryTextColor='white'
+      secondaryTextColor='#ccc'
+      borderColor='red'
+      width='30vw'
+    />
+  ));
