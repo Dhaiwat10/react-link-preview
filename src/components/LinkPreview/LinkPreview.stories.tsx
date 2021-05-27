@@ -31,4 +31,5 @@ storiesOf('LinkPreview', module)
       width='20vw'
       descriptionLength={100}
     />
-  ));
+  ))
+  .add('Fallback', () => <LinkPreview url='https://webzy.dev' fallback={<div>Fallback</div>} />);

@@ -19,6 +19,7 @@ export interface LinkPreviewProps {
   imageHeight?: string | number;
   textAlign?: 'left' | 'right' | 'center';
   margin?: string | number;
+  fallback?: JSX.Element[] | JSX.Element | null;
 }
 
 export interface APIResponse {
@@ -39,6 +40,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   imageHeight,
   textAlign,
   margin,
+  fallback = null,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -66,7 +68,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   }, [url]);
 
   if (!metadata) {
-    return null;
+    return <>{fallback}</>;
   }
 
   const { image, description, title, siteName, hostname } = metadata;

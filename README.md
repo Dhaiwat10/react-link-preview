@@ -33,6 +33,8 @@ You can pass the following props to the `LinkPreview` component.
 
 `url`: string
 
+`fallback?`: JSX.Element (Any valid JSX)
+
 `className?`: string
 
 `width?`: string or number
