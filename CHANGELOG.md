@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.2.0...v1.3.0) (2021-05-27)
+
+
+### Features
+
+* add support for custom fallback ([fa73078](https://github.com/dhaiwat10/react-link-preview/commit/fa73078b4dfa4b16030eb011004e69ded27ca400))
+
 ## [1.2.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.1.5...v1.2.0) (2021-05-25)
 
 
