@@ -35,13 +35,13 @@ You can pass the following props to the `LinkPreview` component.
 
 `fallback?`: JSX.Element (Any valid JSX)
 
-`backgroundColor`: string
+`backgroundColor?`: string
 
-`primaryTextColor`: string
+`primaryTextColor?`: string
 
-`secondaryTextColor`: string
+`secondaryTextColor?`: string
 
-`borderColor`: string
+`borderColor?`: string
 
 `className?`: string
 
