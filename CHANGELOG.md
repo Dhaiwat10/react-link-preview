@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.5.0...v1.6.0) (2021-05-28)
+
+
+### Features
+
+* add loader customization ([f8d87e3](https://github.com/dhaiwat10/react-link-preview/commit/f8d87e3036841c0de275e9f8aa98f5b8ee8cb8a4))
+
 ## [1.5.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.4.0...v1.5.0) (2021-05-28)
 
 
