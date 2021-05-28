@@ -35,6 +35,10 @@ You can pass the following props to the `LinkPreview` component.
 
 `fallback?`: JSX.Element (Any valid JSX)
 
+`showLoader?`: boolean
+
+`customLoader?`: JSX.Element (Any valid JSX)
+
 `backgroundColor?`: string
 
 `primaryTextColor?`: string

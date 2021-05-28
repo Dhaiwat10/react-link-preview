@@ -41,5 +41,6 @@ storiesOf('LinkPreview', module)
       secondaryTextColor='#ccc'
       borderColor='red'
       width='30vw'
+      margin='30px auto'
     />
   ));

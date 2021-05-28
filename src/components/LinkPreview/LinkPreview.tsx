@@ -25,6 +25,8 @@ export interface LinkPreviewProps {
   primaryTextColor?: string;
   secondaryTextColor?: string;
   borderColor?: string;
+  showLoader?: boolean;
+  customLoader?: JSX.Element[] | JSX.Element | null;
 }
 
 export interface APIResponse {
@@ -50,6 +52,8 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   primaryTextColor = 'black',
   secondaryTextColor = 'rgb(100, 100, 100)',
   borderColor = '#ccc',
+  showLoader = true,
+  customLoader = null,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -80,8 +84,12 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
     };
   }, [url]);
 
-  if (loading) {
-    return <Skeleton width={width} imageHeight={imageHeight} />;
+  if (loading && showLoader) {
+    if (customLoader) {
+      return <>{customLoader}</>;
+    } else {
+      return <Skeleton width={width} imageHeight={imageHeight} margin={margin} />;
+    }
   }
 
   if (!metadata) {
