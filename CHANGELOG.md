@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.4.0...v1.5.0) (2021-05-28)
+
+
+### Features
+
+* add loading skeleton ([d0abc49](https://github.com/dhaiwat10/react-link-preview/commit/d0abc4971166f42b3e5a6a92d47e53b7d80528c7))
+
 ## [1.4.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.3.0...v1.4.0) (2021-05-27)
 
 
