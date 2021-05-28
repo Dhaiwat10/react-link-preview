@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.3.0...v1.4.0) (2021-05-27)
+
+
+### Features
+
+* add color props ([5b2892e](https://github.com/dhaiwat10/react-link-preview/commit/5b2892e0a1f42150c8573afc1765c41310aede7b))
+
+
+### Bug Fixes
+
+* fix critical docs ([4538623](https://github.com/dhaiwat10/react-link-preview/commit/4538623d55af5a2c8990ebcbeac5713fd1f19564))
+
+
+### Performance Improvements
+
+* remove classnames from deps ([1d02c1d](https://github.com/dhaiwat10/react-link-preview/commit/1d02c1d8b97120b484f7505f56ffafd3df6cebf8))
+
 ## [1.3.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.2.0...v1.3.0) (2021-05-27)
 
 
