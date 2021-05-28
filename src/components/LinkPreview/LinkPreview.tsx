@@ -6,6 +6,7 @@ import './linkPreview.scss';
 import twThumb from '../../assets/tw-thumb.png';
 // @ts-ignore
 import redditThumb from '../../assets/reddit-thumb.png';
+import Skeleton from './Skeleton';
 
 const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
 
@@ -52,14 +53,17 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(proxyLink + url)
       .then((res) => {
         console.log(res);
         if (_isMounted.current) {
           setMetadata((res.data.metadata as unknown) as APIResponse);
+          setLoading(false);
         }
       })
       .catch((err: Error) => {
@@ -67,6 +71,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         console.error('No metadata could be found for the given URL.');
         if (_isMounted.current) {
           setMetadata(null);
+          setLoading(false);
         }
       });
 
@@ -74,6 +79,10 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       _isMounted.current = false;
     };
   }, [url]);
+
+  if (loading) {
+    return <Skeleton width={width} imageHeight={imageHeight} />;
+  }
 
   if (!metadata) {
     return <>{fallback}</>;
