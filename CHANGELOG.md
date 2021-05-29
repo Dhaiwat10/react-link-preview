@@ -1,5 +1,7 @@
 # Changelog
 
+### [1.7.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.7.0...v1.7.1) (2021-05-29)
+
 ## [1.7.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.6.0...v1.7.0) (2021-05-29)
 
 
