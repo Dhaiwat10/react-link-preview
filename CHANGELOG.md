@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.6.0...v1.7.0) (2021-05-29)
+
+
+### Features
+
+* add image placeholder ([f883808](https://github.com/dhaiwat10/react-link-preview/commit/f883808e7e3a1920d7b7ae979a8e3fa7db42c775))
+
 ## [1.6.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.5.0...v1.6.0) (2021-05-28)
 
 
