@@ -41,7 +41,6 @@
   "module": "index.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "axios": "^0.21.1",
     "react-loading-skeleton": "^2.2.0"
   },
   "peerDependencies": {

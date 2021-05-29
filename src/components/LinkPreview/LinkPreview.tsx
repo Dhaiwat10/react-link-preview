@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 
 import './linkPreview.scss';
@@ -57,12 +56,12 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get(proxyLink + url)
+    fetch(proxyLink + url)
+      .then((res) => res.json())
       .then((res) => {
         console.log(res);
         if (_isMounted.current) {
-          setMetadata((res.data.metadata as unknown) as APIResponse);
+          setMetadata((res.metadata as unknown) as APIResponse);
           setLoading(false);
         }
       })
