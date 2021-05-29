@@ -43,4 +43,5 @@ storiesOf('LinkPreview', module)
       width='30vw'
       margin='30px auto'
     />
-  ));
+  ))
+  .add('Placeholder image', () => <LinkPreview url='https://google.com' width='30vw' />);

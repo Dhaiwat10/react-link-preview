@@ -2,10 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 
 import './linkPreview.scss';
-// @ts-ignore
-import twThumb from '../../assets/tw-thumb.png';
-// @ts-ignore
-import redditThumb from '../../assets/reddit-thumb.png';
 import Skeleton from './Skeleton';
 
 const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
@@ -108,17 +104,15 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       className={`Container ${className}`}
       style={{ width, height, borderRadius, textAlign, margin, backgroundColor, borderColor }}
     >
-      {image && (
-        <div
-          style={{
-            borderTopLeftRadius: borderRadius,
-            borderTopRightRadius: borderRadius,
-            backgroundImage: `url(${image})`,
-            height: imageHeight,
-          }}
-          className='Image'
-        ></div>
-      )}
+      <div
+        style={{
+          borderTopLeftRadius: borderRadius,
+          borderTopRightRadius: borderRadius,
+          backgroundImage: `url(${image})`,
+          height: imageHeight,
+        }}
+        className='Image'
+      ></div>
       <div className='LowerContainer'>
         <h3 className='Title' style={{ color: primaryTextColor }}>
           {title}

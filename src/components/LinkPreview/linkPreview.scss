@@ -14,7 +14,7 @@ $secondary: rgb(100, 100, 100);
   height: fit-content;
 
   &:hover {
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(250, 250, 250) !important;
     cursor: pointer;
   }
 }
@@ -38,6 +38,7 @@ $secondary: rgb(100, 100, 100);
   border-top-right-radius: 7px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   height: 30vh;
 }
 
