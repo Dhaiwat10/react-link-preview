@@ -26,6 +26,12 @@ const Home = () => {
 
 If the component renders nothing, it means that no metadata could be scraped for the URL. Provide a `fallback` component if you don't want to render `null`.
 
+## Important
+
+This package uses a Heroku proxy to get around CORS issues. Feel free to go through the source code of the proxy <a href="https://github.com/dhaiwat10/rlp-proxy">here</a>.
+
+I highly recommend forking both this repo and the proxy repo, and deploying your own copy of the project if you plan to use this package in a production app.
+
 ## API (Available props)
 
 You can pass the following props to the `LinkPreview` component.
