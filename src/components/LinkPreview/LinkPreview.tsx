@@ -55,11 +55,11 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    _isMounted.current = true;
     setLoading(true);
     fetch(proxyLink + url)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         if (_isMounted.current) {
           setMetadata((res.metadata as unknown) as APIResponse);
           setLoading(false);
@@ -104,6 +104,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       style={{ width, height, borderRadius, textAlign, margin, backgroundColor, borderColor }}
     >
       <div
+        data-testid='image-container'
         style={{
           borderTopLeftRadius: borderRadius,
           borderTopRightRadius: borderRadius,
