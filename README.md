@@ -6,7 +6,7 @@ A React component that renders beautiful, fully-customizable link previews.
 ![package downloads](https://img.shields.io/npm/dt/@dhaiwat10/react-link-preview) 
 ![CI](https://img.shields.io/github/workflow/status/dhaiwat10/react-link-preview/CI)
 
-<a href="https://codesandbox.io/s/rlp-demo-90e1x?file=/src/App.js" target="_blank">**Demo**</a>
+<a href="https://codesandbox.io/s/rlp-demo-90e1x?file=/src/App.js" target="_blank">Demo</a>
 
 ## How to use
 
