@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.7.1...v1.7.2) (2021-06-02)
+
+
+### Performance Improvements
+
+* improve perf, add tests ([3ec4236](https://github.com/dhaiwat10/react-link-preview/commit/3ec42369ea9739afe978c254def661e3e62563ca))
+
 ### [1.7.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.7.0...v1.7.1) (2021-05-29)
 
 ## [1.7.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.6.0...v1.7.0) (2021-05-29)
