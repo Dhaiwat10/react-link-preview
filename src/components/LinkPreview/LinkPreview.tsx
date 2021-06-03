@@ -99,6 +99,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
 
   return (
     <div
+      data-testid='container'
       onClick={onClick}
       className={`Container ${className}`}
       style={{ width, height, borderRadius, textAlign, margin, backgroundColor, borderColor }}
@@ -114,11 +115,15 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         className='Image'
       ></div>
       <div className='LowerContainer'>
-        <h3 className='Title' style={{ color: primaryTextColor }}>
+        <h3 data-testid='title' className='Title' style={{ color: primaryTextColor }}>
           {title}
         </h3>
         {description && (
-          <span className='Description Secondary' style={{ color: secondaryTextColor }}>
+          <span
+            data-testid='desc'
+            className='Description Secondary'
+            style={{ color: secondaryTextColor }}
+          >
             {descriptionLength
               ? description.length > descriptionLength
                 ? description.slice(0, descriptionLength) + '...'
