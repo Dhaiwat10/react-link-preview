@@ -44,90 +44,90 @@ The URL for which you want to generate the link preview.
 
 <hr />
 
-### `fallback` (JSX.Element / any valid JSX)
+### `fallback?` (JSX.Element / any valid JSX)
 
 A fallback component which will be rendered if a link preview could not be generated.
 
 <hr />
 
-### `showLoader` (boolean)
+### `showLoader?` (boolean)
 
 Whether you want to display the default loading skeleton or not.
 
 <hr />
 
-### `customLoader` (JSX.Element / any valid JSX)
+### `customLoader?` (JSX.Element / any valid JSX)
 
 Custom loader that will be displayed in place of the default loader.
 
 <hr />
 
-### `backgroundColor` (string)
+### `backgroundColor?` (string)
 
 Background color of the card.
 
 <hr />
 
-### `primaryTextColor` (string)
+### `primaryTextColor?` (string)
 
 Color of the primary text (title).
 
 <hr />
 
-### `secondaryTextColor` (string)
+### `secondaryTextColor?` (string)
 
 Color of the secondary text (description, URL, domain name).
 
 <hr />
 
-### `borderColor` (string)
+### `borderColor?` (string)
 
 Color of the border of the card.
 
 <hr />
 
-### `className` (string)
+### `className?` (string)
 
 Any custom CSS class that you want to apply to the card.
 
 <hr />
 
-### `width` (string or number)
+### `width?` (string or number)
 
 Width of the card.
 
 <hr />
 
-### `height` (string or number)
+### `height?` (string or number)
 
 Height of the card.
 
 <hr />
 
-### `margin` (string or number)
+### `margin?` (string or number)
 
 Margin around the card.
 
 <hr />
 
-### `descriptionLength` (number)
+### `descriptionLength?` (number)
 
 Length of the description in the card. (number of characters)
 
 <hr />
 
-### `borderRadius` (string or number)
+### `borderRadius?` (string or number)
 
 Border radius of the card.
 <hr />
 
-### `imageHeight` (string or number)
+### `imageHeight?` (string or number)
 
 Height of the image.
 
 <hr />
 
-### `textAlign` ( _left_, _right_ or _center_)
+### `textAlign?` ( _left_, _right_ or _center_)
 
 Alignment of the text.
 
