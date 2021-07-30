@@ -1,6 +1,7 @@
 # React Link Preview
 
 A React component that renders beautiful, fully-customizable link previews.
+
 ![Demo](demo.gif)
 [![npm version](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview.svg)](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview) 
 ![package downloads](https://img.shields.io/npm/dt/@dhaiwat10/react-link-preview) 
