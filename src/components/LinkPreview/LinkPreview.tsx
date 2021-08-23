@@ -22,6 +22,7 @@ export interface LinkPreviewProps {
   borderColor?: string;
   showLoader?: boolean;
   customLoader?: JSX.Element[] | JSX.Element | null;
+  openInNewTab?: boolean;
 }
 
 export interface APIResponse {
@@ -49,6 +50,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   borderColor = '#ccc',
   showLoader = true,
   customLoader = null,
+  openInNewTab = true,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -94,7 +96,8 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   const { image, description, title, siteName, hostname } = metadata;
 
   const onClick = () => {
-    window.open(url, '_blank');
+    const browserTarget = openInNewTab ? '_blank' : '_self';
+    window.open(url, browserTarget);
   };
 
   return (
