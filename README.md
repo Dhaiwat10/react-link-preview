@@ -3,8 +3,8 @@
 A React component that renders beautiful, fully-customizable link previews.
 
 ![Demo](demo.gif)
-[![npm version](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview.svg)](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview) 
-![package downloads](https://img.shields.io/npm/dt/@dhaiwat10/react-link-preview) 
+[![npm version](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview.svg)](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview)
+![package downloads](https://img.shields.io/npm/dt/@dhaiwat10/react-link-preview)
 ![CI](https://img.shields.io/github/workflow/status/dhaiwat10/react-link-preview/CI)
 
 <a href="https://codesandbox.io/s/rlp-demo-90e1x?file=/src/App.js" target="_blank">Demo</a>
@@ -120,6 +120,7 @@ Length of the description in the card. (number of characters)
 ### `borderRadius?` (string or number)
 
 Border radius of the card.
+
 <hr />
 
 ### `imageHeight?` (string or number)
@@ -131,6 +132,12 @@ Height of the image.
 ### `textAlign?` ( _left_, _right_ or _center_)
 
 Alignment of the text.
+
+<hr />
+
+### `openInNewTab?` (boolean)
+
+Where the link is opened (new tab or current tab).
 
 <hr />
 
