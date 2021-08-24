@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.7.2...v1.8.0) (2021-08-24)
+
+
+### Features
+
+* add openInNewTab prop ([36ab1aa](https://github.com/dhaiwat10/react-link-preview/commit/36ab1aad723c7f036bf8416fccd0df89245996f6))
+* select if want to open the link in new tab or not ([ea9ed3c](https://github.com/dhaiwat10/react-link-preview/commit/ea9ed3ca443ccd489d1047e46818936789441b25))
+
 ### [1.7.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.7.1...v1.7.2) (2021-06-02)
 
 
