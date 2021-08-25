@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.8.0...v1.9.0) (2021-08-25)
+
+
+### Features
+
+* add support for custom fetcher ([0ad8085](https://github.com/dhaiwat10/react-link-preview/commit/0ad808533688b8cc0d6be34e887fb64faef0164f))
+
 ## [1.8.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.7.2...v1.8.0) (2021-08-24)
 
 
