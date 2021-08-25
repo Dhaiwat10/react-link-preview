@@ -2,6 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { LinkPreview } from './LinkPreview';
 
+const customFetcher = async (url: string) => {
+  const response = await fetch(`https://rlp-proxy.herokuapp.com/v2?url=${url}`);
+  const json = await response.json();
+  return json.metadata;
+};
+
 storiesOf('LinkPreview', module)
   .add('Default', () => <LinkPreview url='https://barcauniversal.com' />)
   .add('Article', () => (
@@ -44,4 +50,7 @@ storiesOf('LinkPreview', module)
       margin='30px auto'
     />
   ))
-  .add('Placeholder image', () => <LinkPreview url='https://google.com' width='30vw' />);
+  .add('Placeholder image', () => <LinkPreview url='https://google.com' width='30vw' />)
+  .add('Using custom fetcher', () => (
+    <LinkPreview url='stripe.com' fetcher={customFetcher} fallback={<div>Fallback</div>} />
+  ));

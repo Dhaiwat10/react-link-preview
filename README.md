@@ -31,9 +31,12 @@ If the component renders nothing, it means that no metadata could be scraped for
 
 ## Important
 
-This package uses a Heroku proxy to get around CORS issues. Feel free to go through the source code of the proxy <a href="https://github.com/dhaiwat10/rlp-proxy">here</a>.
+This package uses a Heroku [proxy (open-source)](https://github.com/dhaiwat10/rlp-proxy) to get around CORS issues. The public proxy receives a lot of traffic (+ there is a rate limit) and is not recommended for production use.
 
-I highly recommend forking both this repo and the proxy repo, and deploying your own copy of the project if you plan to use this package in a production app.
+## Recommended workflow (for production)
+
+- Please [fork the proxy repo](https://github.com/dhaiwat10/rlp-proxy) and host your own copy of it.
+- You can then use the `customFetcher` prop to pass a fetcher function that fetches data from _your_ proxy. The `LinkPreview` will now use your proxy as the data source. More details below.
 
 ## API (Available props)
 
@@ -42,6 +45,26 @@ You can pass the following props to the `LinkPreview` component.
 ### `url` (string)
 
 The URL for which you want to generate the link preview.
+
+<hr />
+
+### `customFetcher?` (function)
+
+A function that takes in a `url` & fetches data from a proxy/server. The function should return a Promise that resolves to an object with the following structure:
+
+```js
+{
+  title: string | null;
+  description: string | null;
+  image: string | null;
+  siteName: string | null;
+  hostname: string | null;
+}
+```
+
+You can use any data-source as you like as long as the `customFetcher` function returns a Promise that resolves to an object with the above structure.
+
+[Example](src/components/LinkPreview/LinkPreview.stories.tsx#L54)
 
 <hr />
 
