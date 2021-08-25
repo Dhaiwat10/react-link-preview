@@ -5,6 +5,16 @@ import Skeleton from './Skeleton';
 
 const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
 
+function isValidResponse(res: any): res is APIResponse {
+  return (
+    res.title !== undefined &&
+    res.description !== undefined &&
+    res.image !== undefined &&
+    res.siteName !== undefined &&
+    res.hostname !== undefined
+  );
+}
+
 export interface LinkPreviewProps {
   url: string;
   className?: string;
@@ -23,6 +33,7 @@ export interface LinkPreviewProps {
   showLoader?: boolean;
   customLoader?: JSX.Element[] | JSX.Element | null;
   openInNewTab?: boolean;
+  fetcher?: (url: string) => Promise<APIResponse | null>;
 }
 
 export interface APIResponse {
@@ -51,6 +62,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   showLoader = true,
   customLoader = null,
   openInNewTab = true,
+  fetcher,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -59,27 +71,50 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   useEffect(() => {
     _isMounted.current = true;
     setLoading(true);
-    fetch(proxyLink + url)
-      .then((res) => res.json())
-      .then((res) => {
-        if (_isMounted.current) {
-          setMetadata((res.metadata as unknown) as APIResponse);
-          setLoading(false);
-        }
-      })
-      .catch((err: Error) => {
-        console.error(err);
-        console.error('No metadata could be found for the given URL.');
-        if (_isMounted.current) {
-          setMetadata(null);
-          setLoading(false);
-        }
-      });
+
+    if (fetcher) {
+      fetcher(url)
+        .then((res) => {
+          if (_isMounted.current) {
+            if (isValidResponse(res)) {
+              setMetadata(res);
+            } else {
+              setMetadata(null);
+            }
+            setLoading(false);
+          }
+        })
+        .catch((err: Error) => {
+          console.error(err);
+          console.error('No metadata could be found for the given URL.');
+          if (_isMounted.current) {
+            setMetadata(null);
+            setLoading(false);
+          }
+        });
+    } else {
+      fetch(proxyLink + url)
+        .then((res) => res.json())
+        .then((res) => {
+          if (_isMounted.current) {
+            setMetadata((res.metadata as unknown) as APIResponse);
+            setLoading(false);
+          }
+        })
+        .catch((err: Error) => {
+          console.error(err);
+          console.error('No metadata could be found for the given URL.');
+          if (_isMounted.current) {
+            setMetadata(null);
+            setLoading(false);
+          }
+        });
+    }
 
     return () => {
       _isMounted.current = false;
     };
-  }, [url]);
+  }, [url, fetcher]);
 
   if (loading && showLoader) {
     if (customLoader) {

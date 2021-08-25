@@ -15,6 +15,12 @@ const metadata: APIResponse = {
   hostname: 'barcauniversal.com',
 };
 
+const customFetcher = async (url: string) => {
+  const response = await fetch(`https://rlp-proxy.herokuapp.com/v2?url=${url}`);
+  const json = await response.json();
+  return json.metadata;
+};
+
 fetchMock.get(`https://rlp-proxy.herokuapp.com/v2?url=${url}`, {
   metadata,
 });
@@ -104,5 +110,20 @@ describe('LinkPreview Component', () => {
 
     const fallbackDiv = await screen.findByTestId('fallback');
     expect(fallbackDiv).toBeTruthy();
+  });
+
+  it('works properly with a custom fetcher', async () => {
+    render(<LinkPreview url={url} fetcher={customFetcher} />);
+
+    const title = await screen.findByText(metadata.title as string);
+    const description = await screen.findByText(metadata.description as string);
+    const siteName = await screen.findByText(`${metadata.siteName} •`);
+    const hostname = await screen.findByText(metadata.hostname as string);
+    const containerDiv = await screen.findByTestId('image-container');
+    expect(title).toBeTruthy();
+    expect(description).toBeTruthy();
+    expect(siteName).toBeTruthy();
+    expect(hostname).toBeTruthy();
+    expect(containerDiv.style.backgroundImage).toBe(`url(${metadata.image})`);
   });
 });
