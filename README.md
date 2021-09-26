@@ -3,6 +3,9 @@
 A React component that renders beautiful, fully-customizable link previews.
 
 ![Demo](demo.gif)
+<a href="https://twitter.com/intent/follow?screen_name=dhaiwat10">
+    <img src="https://img.shields.io/twitter/follow/dhaiwat10.svg?label=Follow%20@dhaiwat10" alt="Follow @dhaiwat10" />
+  </a>
 [![npm version](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview.svg)](https://badge.fury.io/js/%40dhaiwat10%2Freact-link-preview)
 ![package downloads](https://img.shields.io/npm/dt/@dhaiwat10/react-link-preview)
 ![CI](https://img.shields.io/github/workflow/status/dhaiwat10/react-link-preview/CI)
