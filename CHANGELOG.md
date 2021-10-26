@@ -1,5 +1,7 @@
 # Changelog
 
+### [1.9.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.9.0...v1.9.1) (2021-10-26)
+
 ## [1.9.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.8.0...v1.9.0) (2021-08-25)
 
 
