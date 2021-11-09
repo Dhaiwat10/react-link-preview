@@ -50,7 +50,13 @@ storiesOf('LinkPreview', module)
       margin='30px auto'
     />
   ))
-  .add('Placeholder image', () => <LinkPreview url='https://google.com' width='30vw' />)
+  .add('Fallback image', () => (
+    <LinkPreview
+      url='https://google.com'
+      width='30vw'
+      fallbackImageSrc='https://www.aljazeera.com/wp-content/uploads/2021/08/2019-12-07T000000Z_879038429_RC2LQD9L67FQ_RTRMADP_3_SOCCER-SPAIN-FCB-RCD-REPORT.jpg?resize=770%2C513'
+    />
+  ))
   .add('Using custom fetcher', () => (
     <LinkPreview url='stripe.com' fetcher={customFetcher} fallback={<div>Fallback</div>} />
   ));

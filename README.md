@@ -77,6 +77,10 @@ A fallback component which will be rendered if a link preview could not be gener
 
 <hr />
 
+### `fallbackImageSrc` (string)
+
+A fallback image src/URL which will be used if there was no image found for the URL.
+
 ### `showLoader?` (boolean)
 
 Whether you want to display the default loading skeleton or not.

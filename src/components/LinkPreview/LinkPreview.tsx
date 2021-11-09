@@ -4,6 +4,7 @@ import './linkPreview.scss';
 import Skeleton from './Skeleton';
 
 const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
+const placeholderImg = 'https://github.com/Dhaiwat10/react-link-preview/blob/master/src/assets/img-placeholder.jpg';
 
 function isValidResponse(res: any): res is APIResponse {
   return (
@@ -34,6 +35,7 @@ export interface LinkPreviewProps {
   customLoader?: JSX.Element[] | JSX.Element | null;
   openInNewTab?: boolean;
   fetcher?: (url: string) => Promise<APIResponse | null>;
+  fallbackImageSrc?: string;
 }
 
 export interface APIResponse {
@@ -63,6 +65,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   customLoader = null,
   openInNewTab = true,
   fetcher,
+  fallbackImageSrc = placeholderImg,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -147,7 +150,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         style={{
           borderTopLeftRadius: borderRadius,
           borderTopRightRadius: borderRadius,
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${image || fallbackImageSrc})`,
           height: imageHeight,
         }}
         className='Image'
