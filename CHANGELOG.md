@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.9.1...v1.10.0) (2021-11-09)
+
+
+### Features
+
+* add `fallbackImageSrc` ([9f3d687](https://github.com/dhaiwat10/react-link-preview/commit/9f3d6879a6c3eb0b63fff23412c07203669e86a1))
+
 ### [1.9.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.9.0...v1.9.1) (2021-10-26)
 
 ## [1.9.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.8.0...v1.9.0) (2021-08-25)
