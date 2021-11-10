@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.10.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.10.0...v1.10.1) (2021-11-10)
+
+
+### Bug Fixes
+
+* improve `isValidResponse` logic & update broken placeholder src ([fbb1c26](https://github.com/dhaiwat10/react-link-preview/commit/fbb1c2668c89398c52a33146b475198e05593267))
+
 ## [1.10.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.9.1...v1.10.0) (2021-11-09)
 
 
