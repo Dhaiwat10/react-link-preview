@@ -4,15 +4,25 @@ import './linkPreview.scss';
 import Skeleton from './Skeleton';
 
 const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
-const placeholderImg = 'https://github.com/Dhaiwat10/react-link-preview/blob/master/src/assets/img-placeholder.jpg';
+const placeholderImg =
+  'https://raw.githubusercontent.com/Dhaiwat10/react-link-preview/master/src/assets/img-placeholder.jpg';
 
-function isValidResponse(res: any): res is APIResponse {
+function isValidResponse(res: APIResponse | null): boolean {
+  if (!res) return false;
+
   return (
+    res.title !== null &&
+    res.description !== null &&
+    res.image !== null &&
+    res.siteName !== null &&
+    res.hostname !== null &&
     res.title !== undefined &&
     res.description !== undefined &&
     res.image !== undefined &&
     res.siteName !== undefined &&
-    res.hostname !== undefined
+    res.hostname !== undefined &&
+    res.image !== 'null' &&
+    !res.image.startsWith('/')
   );
 }
 
