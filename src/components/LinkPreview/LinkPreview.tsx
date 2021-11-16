@@ -160,7 +160,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         style={{
           borderTopLeftRadius: borderRadius,
           borderTopRightRadius: borderRadius,
-          backgroundImage: `url(${image || fallbackImageSrc})`,
+          backgroundImage: `url(${image || fallbackImageSrc}), url(${fallbackImageSrc})`,
           height: imageHeight,
         }}
         className='Image'

@@ -59,4 +59,7 @@ storiesOf('LinkPreview', module)
   ))
   .add('Using custom fetcher', () => (
     <LinkPreview url='stripe.com' fetcher={customFetcher} fallback={<div>Fallback</div>} />
+  ))
+  .add('Image onError', () => (
+    <LinkPreview url='https://www.brianfriel.xyz/learning-how-to-build-on-solana/' width='30vw' />
   ));
