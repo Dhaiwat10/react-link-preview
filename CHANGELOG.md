@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.10.1...v1.11.0) (2021-11-16)
+
+
+### Features
+
+* display fallback image in case of an invalid image src ([e4efae0](https://github.com/dhaiwat10/react-link-preview/commit/e4efae02c65d9314f580f604db7b62f62c272057))
+
 ### [1.10.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.10.0...v1.10.1) (2021-11-10)
 
 
