@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.12.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.12.0...v1.12.1) (2021-11-16)
+
+
+### Bug Fixes
+
+* update placeholderImg's src ([95e1e11](https://github.com/dhaiwat10/react-link-preview/commit/95e1e113dd6134b15c5904d84393b34a681cde3e))
+
 ## [1.12.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.11.0...v1.12.0) (2021-11-16)
 
 
