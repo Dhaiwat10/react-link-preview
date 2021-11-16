@@ -4,8 +4,7 @@ import './linkPreview.scss';
 import Skeleton from './Skeleton';
 
 const proxyLink = 'https://rlp-proxy.herokuapp.com/v2?url=';
-export const placeholderImg =
-  'https://raw.githubusercontent.com/Dhaiwat10/react-link-preview/master/src/assets/img-placeholder.jpg';
+export const placeholderImg = 'https://i.imgur.com/UeDNBNQ.jpeg';
 
 function isValidResponse(res: APIResponse | null): boolean {
   if (!res) return false;
