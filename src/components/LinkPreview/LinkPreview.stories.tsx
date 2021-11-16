@@ -62,4 +62,11 @@ storiesOf('LinkPreview', module)
   ))
   .add('Image onError', () => (
     <LinkPreview url='https://www.brianfriel.xyz/learning-how-to-build-on-solana/' width='30vw' />
+  ))
+  .add('Explicit image', () => (
+    <LinkPreview
+      url='https://barcauniversal.com/predicted-barcelona-lineup-against-eibar/'
+      width='30vw'
+      explicitImageSrc='https://barcauniversal.com/wp-content/uploads/2021/05/1002622558-2048x1365.jpg'
+    />
   ));

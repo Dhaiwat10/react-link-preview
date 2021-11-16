@@ -46,6 +46,7 @@ export interface LinkPreviewProps {
   openInNewTab?: boolean;
   fetcher?: (url: string) => Promise<APIResponse | null>;
   fallbackImageSrc?: string;
+  explicitImageSrc?: string;
 }
 
 export interface APIResponse {
@@ -76,6 +77,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   openInNewTab = true,
   fetcher,
   fallbackImageSrc = placeholderImg,
+  explicitImageSrc = null,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -160,7 +162,9 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         style={{
           borderTopLeftRadius: borderRadius,
           borderTopRightRadius: borderRadius,
-          backgroundImage: `url(${image || fallbackImageSrc}), url(${fallbackImageSrc})`,
+          backgroundImage: `url(${
+            explicitImageSrc || image || fallbackImageSrc
+          }), url(${fallbackImageSrc})`,
           height: imageHeight,
         }}
         className='Image'
