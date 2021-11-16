@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.11.0...v1.12.0) (2021-11-16)
+
+
+### Features
+
+*  add support for `explicitImageSrc` ([2f94d54](https://github.com/dhaiwat10/react-link-preview/commit/2f94d5433e33d2ae6d8dcba2799776e25ba04663))
+
 ## [1.11.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.10.1...v1.11.0) (2021-11-16)
 
 
