@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.12.2...v1.13.0) (2022-03-06)
+
+
+### Features
+
+* add `showPlaceholderIfNoImage` prop ([#16](https://github.com/dhaiwat10/react-link-preview/issues/16)) ([312318f](https://github.com/dhaiwat10/react-link-preview/commit/312318f9cab046e8cd60521d7529f84488fdb69b))
+
 ### [1.12.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.12.1...v1.12.2) (2021-11-16)
 
 ### [1.12.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.12.0...v1.12.1) (2021-11-16)

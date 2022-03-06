@@ -69,4 +69,7 @@ storiesOf('LinkPreview', module)
       width='30vw'
       explicitImageSrc='https://barcauniversal.com/wp-content/uploads/2021/05/1002622558-2048x1365.jpg'
     />
+  ))
+  .add('Explicit no image in case of no image in metadata', () => (
+    <LinkPreview url='https://barcauniversal.com' width='30vw' showPlaceholderIfNoImage={false} />
   ));

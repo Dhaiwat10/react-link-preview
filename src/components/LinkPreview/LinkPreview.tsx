@@ -46,6 +46,8 @@ export interface LinkPreviewProps {
   fetcher?: (url: string) => Promise<APIResponse | null>;
   fallbackImageSrc?: string;
   explicitImageSrc?: string;
+  /* Whether the placeholder image is displayed in case no image could be scraped */
+  showPlaceholderIfNoImage?: boolean;
 }
 
 export interface APIResponse {
@@ -77,6 +79,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   fetcher,
   fallbackImageSrc = placeholderImg,
   explicitImageSrc = null,
+  showPlaceholderIfNoImage = true,
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -156,18 +159,21 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       className={`Container ${className}`}
       style={{ width, height, borderRadius, textAlign, margin, backgroundColor, borderColor }}
     >
-      <div
-        data-testid='image-container'
-        style={{
-          borderTopLeftRadius: borderRadius,
-          borderTopRightRadius: borderRadius,
-          backgroundImage: `url(${
-            explicitImageSrc || image || fallbackImageSrc
-          }), url(${fallbackImageSrc})`,
-          height: imageHeight,
-        }}
-        className='Image'
-      ></div>
+      {(image || fallbackImageSrc) && showPlaceholderIfNoImage && (
+        <div
+          data-testid='image-container'
+          style={{
+            borderTopLeftRadius: borderRadius,
+            borderTopRightRadius: borderRadius,
+            backgroundImage: `url(${
+              explicitImageSrc || image || fallbackImageSrc
+            }), url(${fallbackImageSrc})`,
+            height: imageHeight,
+          }}
+          className='Image'
+        ></div>
+      )}
+
       <div className='LowerContainer'>
         <h3 data-testid='title' className='Title' style={{ color: primaryTextColor }}>
           {title}
