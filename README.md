@@ -175,4 +175,10 @@ Where the link is opened (new tab or current tab).
 
 <hr />
 
+### `showPlaceholderIfNoImage?` (boolean)
+
+Whether the placeholder image is displayed in case no image could be scraped.
+
+___
+
 Props marked with **?** are **optional**.
