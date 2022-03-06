@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.13.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.13.0...v1.13.1) (2022-03-06)
+
+
+### Bug Fixes
+
+* force-publish ([38ef61b](https://github.com/dhaiwat10/react-link-preview/commit/38ef61bea7ba7cbf65ac6e56d007834e997b86c4))
+
 ## [1.13.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.12.2...v1.13.0) (2022-03-06)
 
 
