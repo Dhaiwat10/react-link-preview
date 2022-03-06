@@ -1,7 +1,7 @@
 {
   "name": "@dhaiwat10/react-link-preview",
   "license": "MIT",
-  "version": "1.9.0",
+  "version": "1.13.1",
   "private": false,
   "description": "React library to preview links.",
   "author": "Dhaiwat Pandya",
