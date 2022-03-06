@@ -81,6 +81,7 @@ describe('LinkPreview Component', () => {
     );
 
     const containerDiv = await screen.findByTestId('container');
+    expect(containerDiv).toMatchSnapshot();
     expect(containerDiv.style.width).toBe(width);
     expect(containerDiv.style.height).toBe(height);
     expect(containerDiv.style.textAlign).toBe(textAlign);

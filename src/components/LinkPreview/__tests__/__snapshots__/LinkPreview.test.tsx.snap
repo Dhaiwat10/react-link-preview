@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkPreview Component applies the various style props correctly 1`] = `
+<div
+  class="Container "
+  data-testid="container"
+  style="width: 400px; height: 400px; border-radius: 10px; text-align: left; margin: 10px; background-color: rgb(204, 204, 204); border-color: rgb(0, 0, 0);"
+>
+  <div
+    class="Image"
+    data-testid="image-container"
+    style="border-top-left-radius: 10px; border-top-right-radius: 10px; height: 100px;"
+  />
+  <div
+    class="LowerContainer"
+  >
+    <h3
+      class="Title"
+      data-testid="title"
+      style="color: rgb(255, 255, 255);"
+    >
+      Predicted Barcelona lineup against Eibar | Barca Universal
+    </h3>
+    <span
+      class="Description Secondary"
+      data-testid="desc"
+      style="color: rgb(240, 240, 240);"
+    >
+      For one final time this season, possibly for one last time under Ronald Koeman, Barcelona will take the field on Saturday. The season took a nosedive that few foresaw but left none surprised. Though Barcelona plays the relegated Eibar at the Ipurua, all eyes will be on the title decisive clashes of the two Madrid […]
+    </span>
+    <div
+      class="Secondary SiteDetails"
+      style="color: rgb(240, 240, 240);"
+    >
+      <span>
+        Barca Universal
+         • 
+      </span>
+      <span>
+        barcauniversal.com
+      </span>
+    </div>
+  </div>
+</div>
+`;
