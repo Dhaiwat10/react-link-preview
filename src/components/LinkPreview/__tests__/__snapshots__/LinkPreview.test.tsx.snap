@@ -43,3 +43,81 @@ exports[`LinkPreview Component applies the various style props correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`LinkPreview Component renders fallback correctly 1`] = `
+<div>
+  <div
+    class="skeleton-container"
+    style="width: 100%;"
+  >
+    <span>
+      <span
+        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style="width: 100%; height: 30vh;"
+      >
+        ‌
+      </span>
+    </span>
+    <div
+      class="skeleton-lower-container"
+    >
+      <span>
+        <span
+          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
+        <span
+          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
+        <span
+          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LinkPreview Component renders the component correctly 1`] = `
+<div>
+  <div
+    class="skeleton-container"
+    style="width: 100%;"
+  >
+    <span>
+      <span
+        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        style="width: 100%; height: 30vh;"
+      >
+        ‌
+      </span>
+    </span>
+    <div
+      class="skeleton-lower-container"
+    >
+      <span>
+        <span
+          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
+        <span
+          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
+        <span
+          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
