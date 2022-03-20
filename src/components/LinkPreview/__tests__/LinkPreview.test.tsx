@@ -27,20 +27,16 @@ fetchMock.get(`https://rlp-proxy.herokuapp.com/v2?url=${url}`, {
 
 describe('LinkPreview Component', () => {
   it('renders the component correctly', async () => {
-    render(<LinkPreview url={url} />);
-
+    const { container } = render(<LinkPreview url={url} />);
+    expect(container).toMatchSnapshot();
     const title = await screen.findByText(metadata.title as string);
     const description = await screen.findByText(metadata.description as string);
     const siteName = await screen.findByText(`${metadata.siteName} •`);
     const hostname = await screen.findByText(metadata.hostname as string);
-    // const containerDiv = await screen.findByTestId('image-container');
     expect(title).toBeTruthy();
     expect(description).toBeTruthy();
     expect(siteName).toBeTruthy();
     expect(hostname).toBeTruthy();
-    // expect(containerDiv.style.backgroundImage).toBe(
-    //   `url(${metadata.image}), url(${placeholderImg})`
-    // );
   });
 
   it('applies the className prop', async () => {
@@ -109,8 +105,8 @@ describe('LinkPreview Component', () => {
       metadata: null,
     });
 
-    render(<LinkPreview url={url} fallback={fallback} />);
-
+    const { container } = render(<LinkPreview url={url} fallback={fallback} />);
+    expect(container).toMatchSnapshot();
     const fallbackDiv = await screen.findByTestId('fallback');
     expect(fallbackDiv).toBeTruthy();
   });
