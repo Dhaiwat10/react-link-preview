@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "yarn clean & rollup -c",
-    "prepare": "yarn build",
+    "prepare": "npm run build",
     "clean": "rimraf dist",
     "dev": "yarn storybook",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
