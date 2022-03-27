@@ -46,6 +46,8 @@ export interface LinkPreviewProps {
   fetcher?: (url: string) => Promise<APIResponse | null>;
   fallbackImageSrc?: string;
   explicitImageSrc?: string;
+  customTitle?: string;
+  customDescription?: string;
   /* Whether the placeholder image is displayed in case no image could be scraped */
   showPlaceholderIfNoImage?: boolean;
 }
@@ -80,6 +82,8 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   fallbackImageSrc = placeholderImg,
   explicitImageSrc = null,
   showPlaceholderIfNoImage = true,
+  customTitle = '',
+  customDescription = ''
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -176,9 +180,9 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
 
       <div className='LowerContainer'>
         <h3 data-testid='title' className='Title' style={{ color: primaryTextColor }}>
-          {title}
+          {customTitle !== ''? customTitle : title}
         </h3>
-        {description && (
+        {customDescription !== ''? customDescription : description && (
           <span
             data-testid='desc'
             className='Description Secondary'
