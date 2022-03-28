@@ -1,0 +1,36 @@
+{
+  "name": "@dhaiwat10/react-link-preview",
+  "license": "MIT",
+  "version": "1.13.1",
+  "private": false,
+  "description": "React library to preview links.",
+  "author": "Dhaiwat Pandya",
+  "keywords": [
+    "react",
+    "react-link-preview",
+    "link",
+    "preview",
+    "card"
+  ],
+  "homepage": "https://github.com/dhaiwat10/react-link-preview",
+  "bugs": {
+    "url": "https://github.com/dhaiwat10/react-link-preview/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhaiwat10/react-link-preview.git"
+  },
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "react-loading-skeleton": "^2.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
