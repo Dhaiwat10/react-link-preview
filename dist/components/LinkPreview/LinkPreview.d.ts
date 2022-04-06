@@ -25,6 +25,7 @@ export interface LinkPreviewProps {
     customTitle?: string;
     customDescription?: string;
     showPlaceholderIfNoImage?: boolean;
+    setApiData?: React.Dispatch<React.SetStateAction<APIResponse | null | undefined>>;
 }
 export interface APIResponse {
     title: string | null;

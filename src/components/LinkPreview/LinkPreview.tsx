@@ -50,6 +50,7 @@ export interface LinkPreviewProps {
   customDescription?: string;
   /* Whether the placeholder image is displayed in case no image could be scraped */
   showPlaceholderIfNoImage?: boolean;
+  setApiData?:React.Dispatch<React.SetStateAction<APIResponse | null | undefined>>
 }
 
 export interface APIResponse {
@@ -83,7 +84,9 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   explicitImageSrc = null,
   showPlaceholderIfNoImage = true,
   customTitle = '',
-  customDescription = ''
+  customDescription = '',
+  setApiData = () => {}
+
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -119,6 +122,8 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         .then((res) => {
           if (_isMounted.current) {
             setMetadata((res.metadata as unknown) as APIResponse);
+            setApiData((res.metadata as unknown) as APIResponse);
+            
             setLoading(false);
           }
         })
