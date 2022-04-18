@@ -48,6 +48,7 @@ export interface LinkPreviewProps {
   explicitImageSrc?: string;
   /* Whether the placeholder image is displayed in case no image could be scraped */
   showPlaceholderIfNoImage?: boolean;
+  onSuccess?: (metadata: APIResponse | null) => void;
 }
 
 export interface APIResponse {
@@ -80,6 +81,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   fallbackImageSrc = placeholderImg,
   explicitImageSrc = null,
   showPlaceholderIfNoImage = true,
+  onSuccess = (metadata) => {},
 }) => {
   const _isMounted = useRef(true);
   const [metadata, setMetadata] = useState<APIResponse | null>();
@@ -93,11 +95,15 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
       fetcher(url)
         .then((res) => {
           if (_isMounted.current) {
+            let metadata;
             if (isValidResponse(res)) {
+              metadata = res;
               setMetadata(res);
             } else {
+              metadata = null;
               setMetadata(null);
             }
+            onSuccess(metadata);
             setLoading(false);
           }
         })
@@ -105,6 +111,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
           console.error(err);
           console.error('No metadata could be found for the given URL.');
           if (_isMounted.current) {
+            onSuccess(null);
             setMetadata(null);
             setLoading(false);
           }
@@ -115,6 +122,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
         .then((res) => {
           if (_isMounted.current) {
             setMetadata((res.metadata as unknown) as APIResponse);
+            onSuccess(res.metadata);
             setLoading(false);
           }
         })
@@ -122,6 +130,7 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
           console.error(err);
           console.error('No metadata could be found for the given URL.');
           if (_isMounted.current) {
+            onSuccess(null);
             setMetadata(null);
             setLoading(false);
           }
@@ -173,7 +182,6 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
           className='Image'
         ></div>
       )}
-
       <div className='LowerContainer'>
         <h3 data-testid='title' className='Title' style={{ color: primaryTextColor }}>
           {title}

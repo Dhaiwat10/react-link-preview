@@ -127,4 +127,14 @@ describe('LinkPreview Component', () => {
     //   `url(${metadata.image}), url(${placeholderImg})`
     // );
   });
+
+  it('calls onSuccess after fetching metadata', async () => {
+    const onSuccess = jest.fn((metadata) => console.log(metadata));
+
+    render(<LinkPreview url={url} onSuccess={onSuccess} />);
+
+    setTimeout(() => {
+      expect(onSuccess).toBeCalledTimes(1);
+    }, 1000);
+  });
 });
