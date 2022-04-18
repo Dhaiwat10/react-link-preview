@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.13.1...v1.14.0) (2022-04-18)
+
+
+### Features
+
+* add onSuccess prop to get the metadata ([#19](https://github.com/dhaiwat10/react-link-preview/issues/19)) ([2e6c670](https://github.com/dhaiwat10/react-link-preview/commit/2e6c6703f3ed5ac14399aa5b24ae8d1ee532fdd8))
+
 ### [1.13.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.13.0...v1.13.1) (2022-03-06)
 
 
