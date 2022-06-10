@@ -2,6 +2,7 @@ import React from 'react';
 import LoadingSkeleton from 'react-loading-skeleton';
 
 import './skeleton.scss';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 interface SkeletonProps {
   width?: string | number;
