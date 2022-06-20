@@ -50,33 +50,43 @@ exports[`LinkPreview Component renders fallback correctly 1`] = `
     class="skeleton-container"
     style="width: 100%;"
   >
-    <span>
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
       <span
-        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        class="react-loading-skeleton"
         style="width: 100%; height: 30vh;"
       >
         ‌
       </span>
+      <br />
     </span>
     <div
       class="skeleton-lower-container"
     >
-      <span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
         <span
-          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+          class="react-loading-skeleton"
         >
           ‌
         </span>
+        <br />
         <span
-          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+          class="react-loading-skeleton"
         >
           ‌
         </span>
+        <br />
         <span
-          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+          class="react-loading-skeleton"
         >
           ‌
         </span>
+        <br />
       </span>
     </div>
   </div>
@@ -89,33 +99,43 @@ exports[`LinkPreview Component renders the component correctly 1`] = `
     class="skeleton-container"
     style="width: 100%;"
   >
-    <span>
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
       <span
-        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        class="react-loading-skeleton"
         style="width: 100%; height: 30vh;"
       >
         ‌
       </span>
+      <br />
     </span>
     <div
       class="skeleton-lower-container"
     >
-      <span>
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
         <span
-          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+          class="react-loading-skeleton"
         >
           ‌
         </span>
+        <br />
         <span
-          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+          class="react-loading-skeleton"
         >
           ‌
         </span>
+        <br />
         <span
-          class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+          class="react-loading-skeleton"
         >
           ‌
         </span>
+        <br />
       </span>
     </div>
   </div>
