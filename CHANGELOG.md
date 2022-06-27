@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.14.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.14.0...v1.14.1) (2022-06-27)
+
+
+### Bug Fixes
+
+* **tests:** fixed snapshot tests ([#27](https://github.com/dhaiwat10/react-link-preview/issues/27)) ([ec2bb67](https://github.com/dhaiwat10/react-link-preview/commit/ec2bb67ebfd906e32a264b3d6c68dc2019f8a0a5))
+
 ## [1.14.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.13.1...v1.14.0) (2022-04-18)
 
 
