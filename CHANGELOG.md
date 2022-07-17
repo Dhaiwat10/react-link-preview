@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.14.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.14.1...v1.14.2) (2022-07-17)
+
+
+### Bug Fixes
+
+* Remove !important on Container:hover ([#31](https://github.com/dhaiwat10/react-link-preview/issues/31)) ([8c9472a](https://github.com/dhaiwat10/react-link-preview/commit/8c9472afd441d69ecc8d9af59f40d44287c510e2))
+
 ### [1.14.1](https://github.com/dhaiwat10/react-link-preview/compare/v1.14.0...v1.14.1) (2022-06-27)
 
 
