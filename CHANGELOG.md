@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/dhaiwat10/react-link-preview/compare/v1.14.2...v1.15.0) (2023-01-27)
+
+
+### Features
+
+* support react 18 and trigger release ([51d3080](https://github.com/dhaiwat10/react-link-preview/commit/51d30807c67d983407f5f63765b354255d0c43f4))
+
 ### [1.14.2](https://github.com/dhaiwat10/react-link-preview/compare/v1.14.1...v1.14.2) (2022-07-17)
 
 
