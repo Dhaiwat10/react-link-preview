@@ -1,6 +1,6 @@
 # React Link Preview
 
-A React component that renders beautiful, fully-customizable link previews.
+A React component that renders beautiful, fully-customizable link previews. 
 
 ![Demo](demo.gif)
 <a href="https://twitter.com/intent/follow?screen_name=dhaiwat10">
