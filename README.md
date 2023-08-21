@@ -39,7 +39,7 @@ This package uses a Heroku [proxy (open-source)](https://github.com/dhaiwat10/rl
 ## Recommended workflow (for production)
 
 - Please [fork the proxy repo](https://github.com/dhaiwat10/rlp-proxy) and host your own copy of it.
-- You can then use the `customFetcher` prop to pass a fetcher function that fetches data from _your_ proxy. The `LinkPreview` will now use your proxy as the data source. More details below.
+- You can then use the `fetcher` prop to pass a fetcher function that fetches data from _your_ proxy. The `LinkPreview` will now use your proxy as the data source. More details below.
 
 ## API (Available props)
 
@@ -51,7 +51,7 @@ The URL for which you want to generate the link preview.
 
 <hr />
 
-### `customFetcher?` (function)
+### `fetcher?` (function)
 
 A function that takes in a `url` & fetches data from a proxy/server. The function should return a Promise that resolves to an object with the following structure:
 
@@ -65,7 +65,7 @@ A function that takes in a `url` & fetches data from a proxy/server. The functio
 }
 ```
 
-You can use any data-source as you like as long as the `customFetcher` function returns a Promise that resolves to an object with the above structure.
+You can use any data-source as you like as long as the `fetcher` function returns a Promise that resolves to an object with the above structure.
 
 [Example](src/components/LinkPreview/LinkPreview.stories.tsx#L54)
 
